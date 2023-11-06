@@ -1,0 +1,383 @@
+REGISTRATION PAGE:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            background-color:#ae87d9;width: 350px;border-radius: 10px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #a{
+            background-color:beige; width: 300px;text-align: center;border-radius: 15px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+
+        form.box{
+            
+        }
+        body{
+            background-color: #eeced1;
+        }
+    </style>
+</head>
+<body>
+    <form>
+    <div align="center">
+        <h1>Registration Form</h1>
+        <div align="center" id="a"><br>
+        <label> Name: </label>
+            <input type="text" placeholder="Enter name"><br><br>
+        <label>Roll no. : </label>
+            <input type="text" placeholder="Enter Roll No."><br><br>
+        <label> Username: </label>
+            <input type="text" placeholder="Enter username"><br><br>
+            Password: 
+            <input type="password" id="pass" name="pass" placeholder="Enter valid password"><br><br>
+            Gender:
+            <input type="radio" name="b">Male 
+            <input type="radio" name="b">Female
+            <input type="radio" name="b">Other<br><br>
+            Area of interest:
+            <input type="checkbox" id="c">Programming<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" id="c">Marketing<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" id="c">Finance<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" id="c">Data Analyst
+        <br><br>
+            <button type="Submit">Submit</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="reset">Clear Form</button><br><br>
+    </div>   
+</div>
+</form>
+</body>
+</html>
+NAV BAR:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<metaname="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>.container-fluid{background-color: cornflowerblue;}</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<div class="container-fluid">
+<divclass="collapse navbar-collapse"id="navbarNav">
+<ulclass="navbar-nav">
+<liclass="nav-item">
+<aclass="nav-link active"aria-current="page"href="#"><b>Home</b></a>
+</li>
+<liclass="nav-item">
+<aclass="nav-link"href="#"><b>About</b></a>
+</li>
+<liclass="nav-item">
+<aclass="nav-link"href="#"><b>Services</b></a>
+</li>
+<liclass="nav-item"><aclass="nav-link"href="#"><b>Contact Us</b></a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</body>
+</html>
+
+LOGIN PAGE AND BOOTSTRAP(MAKING WEBSITE RESPONSIVE):
+Same as registration page
+HANDLE ANY 5 EVENTS: (MOUSEOVER, MOUSEOUT, CLICK, RESET, LOAD)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+    function load()
+    {
+        alert("loaded")
+    }
+    function resize()
+    {
+        alert("page resized")
+    }
+    function submit()
+    {
+        alert ("triggered by onclick")
+    }
+    function mouseover()
+    {
+        document.body.style.background="pink";
+    }
+    function mouseout()
+    {
+        document.body.style.background="lightblue";
+    }
+    function resetForm()
+    {
+        alert("This form was reset")
+    }
+</script>
+<title>Events</title>
+</head>
+<body onload="load()" onresize="resize()">
+    <button onclick="submit()" vlaue="click">click</button>
+    <button onmouseover="mouseover()" value="submit">mouseover</button>
+    <button onmouseout="mouseout()" value="Submit">mouseout</button>
+    <form onreset="resetForm()">
+    Enter name:<input type="text">
+    <input type="reset">
+    <!-- <button onreset="resetForm()" value="reset">Reset</button> -->
+    </form>
+</body>
+</title>
+</html>
+
+VERIFICATION:
+index.html file code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Registration Form</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="roll">Roll Number:</label>
+                <input type="text" id="roll" name="roll" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" name="mobile" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="submit">Submit</button>
+                <button type="button" id="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+JAVASCRIPT FILE:
+Save as : script.js
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("registration-form");
+    const resetButton = document.getElementById("reset");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const roll = document.getElementById("roll").value;
+        const email = document.getElementById("email").value;
+        const mobile = document.getElementById("mobile").value;
+
+        if (mobile.length === 10 && email.includes("@")) {
+            alert("Registration successful!");
+            // You can add code here to submit the form data to a server if needed.
+        } else {
+            alert("Invalid mobile number or email address.");
+        }
+    });
+
+    resetButton.addEventListener("click", function () {
+        form.reset();
+    });
+});
+
+REACT CLASS COMPONENT AND FUNCTION COMPONENT:
+In C drive create a folder ‘React’ and open cmd in it.
+1)	create-react-app reactfirst
+2)	cd reactfirst
+3)	npm start
+Code:
+_________________________________
+App.js
+
+import ./App.css';
+
+import Function from './Components/Function'; import Class1 from './Components/Class1'; import Hook2useState from './Components/Hook2useState';
+
+function App() {
+
+return (
+
+<div className="App">
+
+<>
+
+<Function/> <Class1/>
+
+</>
+
+<header className="App-header"> <h1>Hello</h1>
+
+<a
+
+className="App-link" href="https://reactjs.org"
+
+target="_blank" rel="noopener noreferrer"
+
+Learn React
+
+</a>
+
+</header>
+
+</div>
+
+);
+
+}
+
+export default App;
+_________________________________________
+App.css
+
+.App {
+
+text-align: left; background-color: #282c34; color: white;
+font-size: 20px;
+padding-top: 200px;
+}
+
+.App-header {
+
+min-height: 100vh;
+
+display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: calc(10px + 2vmin); color: white;
+}
+
+App-link {
+color: #61dafb;
+
+}
+___________;_____;___________________
+ Class1.js
+
+import React, { Component } from "react";
+
+class Class1 extends Component{
+
+render(){
+
+return ( <div>
+
+<p><h1>This is class component.</h1></p><br></br>
+
+<ul>
+
+<li>X</li>
+
+<li>Y</li>
+
+<li>Z</li>
+
+</ul>
+
+</div>
+
+);
+
+}
+
+export default Class1;
+__________________________________
+Function.js
+
+import React from "react";
+
+function Function() {
+
+return (
+
+<p><h1>This is function component.</h1></p><br></br>
+
+<ul>
+
+<li>A</li>
+
+<li>B</li>
+
+<li>C</li>
+
+</ul></div>
+
+<div>
+
+);
+
+}
+
+export default Function;
+
+CLICK EVENT BY BUILDING A NAV MENU USING ROUTER:
+Nahi ata
+FS MODULE IN NODE JS:
+const fs = require("fs"); const path = require("path")
+const dirPath = path.join(__dirname, 'test');
+const filePath = dirPath + "\\node.txt";
+fs.writeFileSync(filePath, `${filePath} Created !!`);
+const data = fs.readFileSync(filePath, 'utf-8'); console.log(data);
+const apErr = fs.appendFileSync(filePath, "\nThis is append data")
+if (apErr) console.log(apErr); else console.log("Appended");
+const renameErr = fs.renameSync(filePath, dirPath + "\\newtest.txt");
+if (renameErr) console.log(renameErr); else console.log("Renamed");
+const delErr = fs.unlinkSync(dirPath + "\\newtest.txt");
+if (delErr) console.log(delErr); else
+console.log("deleted");
+
+IMPLEMENT FILE SERVER IN NODE JS:
+consthttp=require("http");
+const fs = require ('fs');
+constport=3030
+constserver=http.createServer(function(req,res)
+{
+res.writeHead(200,{'content-type':'text/html'})
+fs.readFile('index11.html',function(error,data)
+{
+if(error)
+{
+res.write(404)
+res.write('Error:Filenotfound')
+}
+Else
+{
+res.write(data)
+}
+res.end()
+})
+})
+server.listen(port,function(error)
+{
+if(error)
+{
+console.log('Somethingwentwrong',error)
+}
+else
+{
+console.log(‘Server is listening on port’+port)
+}
+})
