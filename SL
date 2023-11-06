@@ -1,0 +1,150 @@
+
+Frequency analysis:
+
+def encrypt(plain_text, key):
+ cipher_text = ""
+ for char in plain_text:
+ if char.isalpha():
+ if char.islower():
+ cipher_char = chr((ord(char) - ord('a') + key) % 26 + ord('a'))
+ else:
+ cipher_char = chr((ord(char) - ord('A') + key) % 26 + ord('A'))
+ elif char == ' ':
+ cipher_char = '#'
+ else:
+ cipher_char = char
+ cipher_text += cipher_char
+ return cipher_text
+
+def decrypt(cipher_text, key):
+ plain_text = ""
+ for char in cipher_text:
+ if char.isalpha():
+ if char.islower():
+ plain_char = chr((ord(char) - ord('a') - key) % 26 + ord('a'))
+ else:
+ plain_char = chr((ord(char) - ord('A') - key) % 26 + ord('A'))
+ elif char == '#':
+ plain_char = ' '
+ else:
+ plain_char = char
+ plain_text += plain_char
+ return plain_text
+def calculate_letter_frequency(text):
+ letter_count = {}
+ total_count = 0
+ for char in text:
+ if char.isalpha():
+ char = char.lower()
+ letter_count[char] = letter_count.get(char, 0) + 1
+total_count += 1
+
+ frequency_percentage = {}
+ for letter, count in letter_count.items():
+ percentage = (count / total_count) * 100
+ frequency_percentage[letter] = percentage
+ return frequency_percentage
+
+plain_text = input("Enter the plain text: ")
+key = int(input("Enter the key for encryption/decryption: "))
+
+encrypted_text = encrypt(plain_text, key)
+decrypted_text = decrypt(encrypted_text, key)
+
+print("Encrypted Text: ", encrypted_text)
+print("Decrypted Text: ", decrypted_text)
+
+frequency_analysis = calculate_letter_frequency(decrypted_text)
+print("Frequency Analysis:")
+for letter, percentage in frequency_analysis.items():
+ print("{}: {}%".format(letter, percentage))
+
+Vignere Cipher:
+
+def encrypt_vigenere(plain_text, key):
+ encrypted_text = ""
+ key = key.upper()
+ key_index = 0
+ for char in plain_text:
+ if char.isalpha():
+ shift = ord(key[key_index % len(key)]) - ord('A')
+ if char.islower():
+ base = ord('a')
+ else:
+ base = ord('A')
+ encrypted_char = chr((ord(char) - base + shift) % 26 + base)
+ key_index += 1
+ else:
+ encrypted_char = char
+ encrypted_text += encrypted_char
+ return encrypted_text
+def decrypt_vigenere(encrypted_text, key):
+ decrypted_text = ""
+ key = key.upper()
+ key_index = 0
+ for char in encrypted_text:
+ if char.isalpha():
+ shift = ord(key[key_index % len(key)]) - ord('A')
+ if char.islower():
+ base = ord('a')
+ else:
+ base = ord('A')
+ decrypted_char = chr((ord(char) - base - shift) % 26 + base)
+ key_index += 1
+ else:
+ decrypted_char = char
+ decrypted_text += decrypted_char
+ return decrypted_text
+# Take user input for plain text and key
+plain_text = input("Enter the plain text: ")
+key = input("Enter the key: ")
+encrypted_text = encrypt_vigenere(plain_text, key)
+print("Encrypted:", encrypted_text)
+decrypted_text = decrypt_vigenere(encrypted_text, key)
+print("Decrypted:", decrypted_text)
+
+*//-------------------------------------------------------------------------------------------------------------------------------------//*
+*#TRANSPOSITION CIPHER ENCRYPTION-----------------------*
+def contains_number(string):
+    return any(char.isdigit() for char in string)
+
+def create_cipher_matrix(cipher, transpositionKey):
+    matrix = []
+    for i in range(0, len(cipher), transpositionKey):
+        row = cipher[i:i + transpositionKey]
+        if len(row) < transpositionKey:
+            row += "*" * (transpositionKey - len(row))
+        matrix.append(row)
+    return matrix
+
+inputString = input("Enter the input string: ")
+key = int(input("Enter the key: "))
+
+cipher = ""
+if not contains_number(inputString):
+    for i in inputString:
+        if i.isalpha():
+            if i.islower():
+                cipher = cipher + chr(ord("a") + (ord(i) - ord("a") + key) % 26)
+            else:
+                cipher = cipher + chr(ord("A") + (ord(i) - ord("A") + key) % 26)
+        elif i == " ":
+            cipher = cipher + "#"
+        else:
+            cipher = cipher + i
+
+    print('Encrypted text: ', cipher)
+    #print(f"Encrypted Text : {cipher}")
+
+    transpositionKey = int(input("Enter the Transposition Key: "))
+
+    cipher_matrix = create_cipher_matrix(cipher, transpositionKey)
+    print("Transposition Cipher : ")
+    print(cipher_matrix)
+    for row in cipher_matrix:
+        print(" ".join(row))
+else:
+    print("Error : Your String contains a number")
+*//-------------------------------------------------------------------------------------------------------------------------------------//*
+
+
