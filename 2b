@@ -1,0 +1,90 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'First App',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('MyApp-Srinivas'),
+          backgroundColor: Colors.blue,
+          leading: const Icon(Icons.home),
+          centerTitle: true,
+          foregroundColor: Colors.white,
+          iconTheme: const IconThemeData(color: Colors.yellow, size: 40),
+        ),
+        body: Row(
+          children: [
+            Expanded(
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: 800.0,
+                    height: 80.0,
+                    color: const Color.fromARGB(255, 117, 194, 120),
+                    child: Text(
+                      'Message 1',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        wordSpacing: 5,
+                        fontSize: 30,
+                        fontStyle: FontStyle.italic,
+                        shadows: [
+                          Shadow(
+                            color: Colors.orangeAccent,
+                            offset: Offset(2, 1),
+                            blurRadius: 5,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Container(
+                    width: 800.0,
+                    height: 80.0,
+                    color: const Color.fromARGB(255, 117, 194, 120),
+                    child: Text(
+                      'Message 2',
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.fade,
+                      softWrap: true,
+                      style: const TextStyle(
+                        wordSpacing: 5,
+                        fontSize: 30,
+                        fontStyle: FontStyle.italic,
+                        shadows: [
+                          Shadow(
+                            color: Colors.orangeAccent,
+                            offset: Offset(2, 1),
+                            blurRadius: 5,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
